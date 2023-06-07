@@ -1,0 +1,40 @@
+{% extends "master.html" %}
+
+{% block content %}
+<div class="card text-center">
+	<div class="card-header">
+	  <img src="C:\Users\DylanW\Desktop\6172dcb6f00b60a4d77ed077_baader-logo-blue.svg" class="img-fluid" alt="Responsive image">
+	</div>
+	<div class="card-body">
+	  <h5 class="card-title">AutoPlot</h5>
+	  <p class="card-text">Current Status: Running</p>
+	  <a href="#" class="btn btn-primary">Restart</a>
+	</div>
+  </div>
+  <div class="card text-center">
+	  <div class="card-header">
+		  <h5 class="card-title">Events</h5>
+	  </div>
+	  <div class="card-body">
+		<table class="table">
+			<thead>
+			  <tr>
+				<th scope="col">#</th>
+				<th scope="col">Date</th>
+				<th scope="col">Event</th>
+			  </tr>
+			</thead>
+			<tbody>
+				{% for x in events %}
+					<tr>
+						<th scope="row">{{ x.id }}</th>
+						<td>{{ x.runtime }}</td>
+						<td>{{ x.action }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		  </table>
+	  </div>
+	</div>
+
+{% endblock %}
